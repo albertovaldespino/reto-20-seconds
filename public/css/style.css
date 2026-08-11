@@ -365,6 +365,18 @@ section.bloque{ margin-bottom: 18px; }
   font-weight: 500;
 }
 
+/* Línea destacada exclusiva de la pantalla roja (no afecta verde ni amarillo) */
+.pantalla-alerta p.destacado{
+  font-weight: 800;
+  font-size: 1.14rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  opacity: 1;
+  margin: 14px 0;
+  color: #fff;
+}
+.pantalla-alerta p + p{ margin-top: 10px; }
+
 .indicador-registro{
   margin-top: 22px;
   font-size: 0.8rem;
