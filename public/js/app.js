@@ -170,20 +170,26 @@ function mostrarResultado(resultado, id) {
 
   // El color mostrado viene SIEMPRE del resultado confirmado por el
   // servidor (nunca de un cálculo hecho en el navegador).
-  let claseBody, pantalla;
+  let claseBody, pantalla, mostrarIdAlAlumno;
   if (resultado === "ROJO") {
     claseBody = "estado-alerta";
     pantalla = pantallaAlerta;
+    // El ID interno de PostgreSQL no debe mostrarse al alumno en la pantalla
+    // roja (sigue guardándose en la base de datos y visible en /admin).
+    mostrarIdAlAlumno = false;
   } else if (resultado === "AMARILLO") {
     claseBody = "estado-amarillo";
     pantalla = pantallaAmarilla;
+    mostrarIdAlAlumno = true;
   } else {
     claseBody = "estado-verde";
     pantalla = pantallaVerde;
+    mostrarIdAlAlumno = true;
   }
 
   document.body.classList.add(claseBody);
-  pantalla.querySelector(".indicador-registro").textContent = `✓ Respuesta registrada${id ? " · #" + id : ""}`;
+  pantalla.querySelector(".indicador-registro").textContent =
+    `✓ Respuesta registrada${mostrarIdAlAlumno && id ? " · #" + id : ""}`;
   pantalla.classList.add("visible");
 }
 
