@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Administrador · Reto 20 Seconds</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="public/css/style.css">
+<link rel="stylesheet" href="public/css/admin.css">
+</head>
+<body class="admin-body">
+
+<!-- LOGIN -->
+<div class="contenedor-login" id="contenedorLogin">
+  <div class="tarjeta-login">
+    <div class="logos-fila">
+      <img src="public/img/escudo-unam.png" alt="Escudo UNAM" />
+      <img src="public/img/logo-salud-unam.png" alt="Salud UNAM" />
+    </div>
+    <h1>Panel de administrador</h1>
+    <p class="sub">Reto 20 Seconds · Acceso restringido</p>
+
+    <form id="formLogin">
+      <div class="campo-login">
+        <label for="inputPassword">Contraseña</label>
+        <input type="password" id="inputPassword" autocomplete="current-password" required>
+      </div>
+      <p class="error-login" id="errorLogin">Contraseña incorrecta</p>
+      <button type="submit" class="btn-entrar" id="btnEntrar">Ingresar</button>
+    </form>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="contenedorDashboard" style="display:none;">
+  <header class="admin-header">
+    <div class="logos-fila">
+      <img src="public/img/escudo-unam.png" alt="Escudo UNAM" />
+      <img src="public/img/logo-salud-unam.png" alt="Salud UNAM" />
+    </div>
+    <div class="fila-titulo">
+      <h1>Reto 20 Seconds · Administrador</h1>
+      <button type="button" class="btn-salir" id="btnSalir">Salir</button>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="fila-acciones">
+      <button type="button" class="btn-accion primario" id="btnActualizar">↻ Actualizar</button>
+      <a class="btn-accion" href="/api/admin/csv" id="btnDescargarCSV">⭳ Descargar CSV</a>
+    </div>
+
+    <div class="rejilla-stats" id="zonaStats">
+      <div class="estado-carga">Cargando…</div>
+    </div>
+
+    <div id="zonaGraficas"></div>
+
+    <div id="zonaTabla">
+      <div class="estado-carga">Cargando respuestas…</div>
+    </div>
+  </main>
+</div>
+
+<script src="public/js/admin.js"></script>
+</body>
+</html>
