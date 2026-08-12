@@ -61,16 +61,16 @@ const DURACION_SESION_MS = 8 * 60 * 60 * 1000; // 8 horas
 // el backend nunca confía en un resultado calculado en el navegador.
 //
 //   0, 1 o 2 "NO"  -> VERDE
-//   exactamente 3   -> AMARILLO
-//   4, 5 o 6 "NO"  -> ROJO
+//   3 o 4 "NO"     -> AMARILLO
+//   5 o 6 "NO"     -> ROJO
 // ------------------------------------------------------------
 const NUMERO_PREGUNTAS = 6;
-const LIMITE_AMARILLO = 3; // exactamente este número de "NO" -> amarillo
-const LIMITE_ROJO = 4; // este número de "NO" o más -> rojo
+const LIMITE_AMARILLO_MIN = 3; // desde este número de "NO" -> amarillo
+const LIMITE_ROJO_MIN = 5; // desde este número de "NO" -> rojo
 
 function calcularResultado(numeroNo) {
-  if (numeroNo >= LIMITE_ROJO) return "ROJO";
-  if (numeroNo === LIMITE_AMARILLO) return "AMARILLO";
+  if (numeroNo >= LIMITE_ROJO_MIN) return "ROJO";
+  if (numeroNo >= LIMITE_AMARILLO_MIN) return "AMARILLO";
   return "VERDE";
 }
 
