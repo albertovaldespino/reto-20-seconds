@@ -10,7 +10,7 @@ const PREGUNTAS = [
   { campo: "pregunta3", texto: "¿Hiciste ejercicio esta semana?" },
   { campo: "pregunta4", texto: "¿Te has sentido alegre esta semana?" },
   { campo: "pregunta5", texto: "¿Ves bien?" },
-  { campo: "pregunta6", texto: "Esta semana, ¿te has ido a dormir sin lavarte los dientes?" },
+  { campo: "pregunta6", texto: "¿Te lavas los dientes antes de dormir?" },
 ];
 
 // ============================================================
